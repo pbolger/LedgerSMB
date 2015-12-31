@@ -1,0 +1,39 @@
+/*Inline help via css*/
+form td:hover:before,div :hover:before{position: absolute;
+  left: 0;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 6px;
+  color: #000000;
+  font-size: 14px;
+-webkit-box-shadow: 4px 4px 23px -14px rgba(0,0,0,0.69);
+-moz-box-shadow: 4px 4px 23px -14px rgba(0,0,0,0.69);
+box-shadow: 4px 4px 23px -14px rgba(0,0,0,0.69);
+z-index: 1;
+background: #e2dcc3; /* Old browsers */
+background: -moz-linear-gradient(top,  #e2dcc3 2%, #fefcea 95%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #e2dcc3 2%,#fefcea 95%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #e2dcc3 2%,#fefcea 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2dcc3', endColorstr='#fefcea',GradientType=0 ); /* IE6-9 */
+}
+
+/*contacts>search*/
+#entity_class:hover:before{content:"relationship to your company";}
+#widget_meta-number:hover:before{content:"Account number ????";}
+/*contacts>add contact*/
+/*contacts>search*/
+/*contacts>search*/
+/*contacts>search*/
+/*contacts>search*/
+/*contacts>search*/
+/*contacts>search*/
+/*contacts>search*/
+/*contacts>search*/
+/*cash>reciepts*/
+#datefrom-label-column:hover:before{content:"The start date for the receipted period";}
+#total-gt-label-column:hover:before{content:"The total amount of the receipt";}
+
+
