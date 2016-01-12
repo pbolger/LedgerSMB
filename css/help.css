@@ -1,3 +1,59 @@
+html, body {height: 100%}
+#to_date-label {padding: 0 1em}
+.daterange-from,.daterange-to{float:left;clear:right;margin: 0 1em;border:2px double red}
+.daterange-period{display:none}
+fieldset{margin:1em}
+fieldset {border:1px solid;width:500px;background:orange;border-radius:8px;padding:.3em}
+fieldset div{display:block; border-radius:5px; margin:1em 0;/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+label{font-weight:bold;margin-right:1em}
+div.gifi{display:none}
+background: #fefcea; /* Old browsers */
+background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+}
+#history{padding:.2em;margin:0;background:navy;color:yellow;text-align:right;font-weight:bold}
+legend{border:1px solid black;border-radius:8px; background:navy;color:yellow;margin-top:1em;padding:2px 4px}
+label.dijitRadio{border:1px dotted green}
+body{margin:0;padding:0;background:#444}
+#maindiv{margin:0;padding:0}
+#console-container,#maindiv, #menudiv_splitter{padding:0;margin:0;/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feb645+1,f1e767+90 */
+background: #feb645; /* Old browsers */
+background: -moz-linear-gradient(top,  #feb645 1%, #f1e767 90%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #feb645 1%,#f1e767 90%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #feb645 1%,#f1e767 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', endColorstr='#f1e767',GradientType=0 ); /* IE6-9 */
+}
+#menudiv{/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#23538a+4,a7cfdf+100,a7cfdf+100 */
+background: #23538a; /* Old browsers */
+background: -moz-linear-gradient(top,  #23538a 4%, #a7cfdf 100%, #a7cfdf 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #23538a 4%,#a7cfdf 100%,#a7cfdf 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #23538a 4%,#a7cfdf 100%,#a7cfdf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr='#a7cfdf',GradientType=0 ); /* IE6-9 */
+margin:1em;border-radius:12px;box-shadow:inset -0px -3px 6px #666}
+#menudiv ul{margin:0;padding:0;font-weight:bold}
+#menudiv li{display:block; background:rgba(255,255,255,0.5);margin:2px 0; }
+#menudiv li li {padding:0 12px; background:yellow}
+#menudiv a:hover{background:green;display:block;color:yellow}
+form{margin:0;padding:0}
+table{font-size:1.4em;border:red}
+td{background:beige}
+.dijitButtonText{box-shadow: 1px 1px 2px #ddd;border-radius:3px;padding:1em;}
+.listtop{font: italic small-caps normal 45px/1.4 Georgia !important;text-align:right;padding: 0 1em}
+.listtop{color:yellow;text-shadow: 3px 3px 4px yellow;}
+#version_info, #login_info, #company_info{font:courier-new;background:gray;color:yellow}
+.dijit{font-size:1.3em;border-radius:4px;padding:.2em .4em;}{
+background: #f7fbfc; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7fbfc 0%, #d9edf2 40%, #add9e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+}
+td {background:transparent}
+th{text-align:right}
+
+
 /*Inline help via css*/
 form td:hover:before,div :hover:before{position: absolute;
   left: 0;
@@ -35,5 +91,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2dcc3', end
 /*cash>reciepts*/
 #datefrom-label-column:hover:before{content:"The start date for the receipted period";}
 #total-gt-label-column:hover:before{content:"The total amount of the receipt";}
-
-

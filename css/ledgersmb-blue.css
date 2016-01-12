@@ -1,5 +1,6 @@
+@import url("/css/dojo-theme-flat-master/CSS/dojo/flat.cssc");
 @import url("help.css");
-
+body, html {height:100%}
 /*
 Below is the result of your feedback form.  It was submitted by
 Eduard Rozenberg (edrozenberg@pobox.com) on Thursday, August 18, 2005 at 15:41:32
