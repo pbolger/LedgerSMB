@@ -1,0 +1,159 @@
+<?lsmb INCLUDE 'ui-header.html' ?>
+<?lsmb PROCESS elements.html;
+       PROCESS 'report_base.html'; ?>
+<body class="lsmb <?lsmb dojo_theme ?>">
+
+
+<h1><?lsmb text('Income Statement') ?></h1>
+    <form data-dojo-type="lsmb/lib/Form" method="get" action="pnl.pl">
+        <fieldset class="options">
+
+            <legend><?lsmb text('Options') ?></legend>
+
+
+<div class="">
+ <label><?lsmb text('Basis'); ?></label>
+            <?lsmb PROCESS input element_data={
+              name = 'basis',
+              type = 'radio',
+              id =  'accrual',
+              value = 'accrual',
+              label = text('Accrual'),
+              checked = 'checked',
+              } -?>
+            <?lsmb PROCESS input element_data={
+              name = 'basis',
+              type = 'radio',
+                id = 'cash',
+              value = 'cash',
+              label = text('Cash'),
+              } -?>
+</div>
+
+<div class"option-section">
+ <label><?lsmb text('Ignore Year-ends'); ?></label>
+                            <?lsmb PROCESS select element_data = {
+                             options = [
+                                 {
+                                     label="All",
+                                     id="all",
+                                 },
+                                 {
+                                     label="Last Only",
+                                     id="last"
+                                 },
+                                 {
+                                     label="None",
+                                     id="none",
+                                 }
+                             ],
+                             default_values = [report.ignore_yearend],
+                             name = 'ignore_yearend',
+                             text_attr = 'label',
+                             value_attr = 'id',
+                             } ?>
+</div>
+<div class"gifi">
+<?lsmb PROCESS input element_data = {
+                               type = 'checkbox',
+                              value = 1,
+                              label = text('GIFI'),
+                               name = 'gifi',
+
+                          } ?>
+</div>
+<div class"option-section">
+</div>
+<div class"option-section">
+                <?lsmb PROCESS input element_data = {
+                               type = 'checkbox',
+                              value = 1,
+                              label = text('Show Account numbers'),
+                               name = 'incl_accnos',
+                            checked = 'checked'
+                          } ?>
+</div>
+<div class"option-section">
+<label><?lsmb text('Hierarchy type') ?></label>
+
+<?lsmb
+HIERARCHY_SETUP = earn_id;
+IF HIERARCHY_SETUP;
+    full_checked = 'CHECKED';
+    full_disabled = undef;
+    legacy_checked = 'undef';
+ELSE;
+    full_disabled = 'DISABLED';
+    full_checked = undef;
+    legacy_checked = 'CHECKED';
+END;
+PROCESS input element_data = {
+   label = text('Full')
+    type = 'radio'
+    name = 'legacy_hierarchy'
+   value = 0
+      id = 'legacy-hierarchy-0'
+ checked = full_checked
+disabled = full_disabled
+};
+
+
+PROCESS input element_data = {
+   label = text('Account category')
+    type = 'radio'
+    name = 'legacy_hierarchy'
+   value = 1
+      id = 'legacy-hierarchy-1'
+ checked = legacy_checked
+};
+?>
+
+
+<?lsmb IF full_disabled ?>
+<div class="setupwarning" id="warning-hierarchy-not-setup">
+<a href="http://ledgersmb.org/topic/using-account-hierarchies-reporting" target='_blank'><?lsmb text('Not set up for hierarchy reporting, please see linked instructions') ?></a>
+
+<?lsmb END ?>
+</div>
+<hr />
+<div class"option-section">
+<?lsmb PROCESS select element_data = {
+             label = text('Language')
+             name = 'language'
+             options = languages
+             text_attr = 'description'
+             value_attr = 'code'
+             default_values = [USER.language]
+};
+?>
+</div>
+</fieldset>
+       <fieldset>
+<legend>Select a date range</legend>
+<div class"option-section">
+  <?lsmb PROCESS business_classes;
+  PROCESS date_row_div; # TODO add comparisons ?>
+</fieldset>
+       <fieldset>
+<legend>Compare with previous periods</legend>
+       <h3><?lsmb text('Enter up to 3 date ranges for comparison') ?></h2>
+
+       <?lsmb FOREACH c IN [1, 2, 3];
+              PROCESS date_row SUFFIX='_' _ c;
+              END ?>
+
+</fieldset>
+</div>
+<!-- Submit -->
+<?lsmb PROCESS button element_data = {
+    name = 'action'
+   class = 'submit'
+    type = 'submit'
+    text = text('Continue'),
+   value = 'generate_income_statement'
+} ?>
+    </form>
+
+
+</body>
+</html>
